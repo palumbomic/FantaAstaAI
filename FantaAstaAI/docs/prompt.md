@@ -1,5 +1,4 @@
-# Asta Fantacalcio Serie A 2025/2026 — Prompt Migliorato (Budget-Safe, Realistico)
-
+# Asta Fantacalcio Serie A 2025/2026 
 ## ✅ Principi
 - Usa **solo** i giocatori presenti nel file Excel che ti fornisco (`Listone_Ufficiale_2025_26.xlsx`).
 - Procedi con **un giocatore alla volta**, rispettando l’ordine dei ruoli: **Portieri → Difensori → Centrocampisti → Attaccanti**.

@@ -1,124 +1,111 @@
-Voglio che tu gestisca un’asta di fantacalcio realistica, competitiva e completamente automatica per la stagione 2025/2026 della Serie A.
-Ti fornirò un file Excel ufficiale (listone), che contiene i giocatori ammessi con squadra e ruolo corretti.
-Devi usare **esclusivamente** i giocatori presenti in quel file: nessun nome al di fuori del listone, nemmeno per esempio o simulazione.
-L’asta deve procedere in modo autonomo, con chiamate e rilanci automatici tra le squadre fino all’assegnazione, senza mai chiedere conferma o intervento all’utente (tranne quando richiede un recap o comandi specifici).
+Voglio che tu gestisca un’asta di fantacalcio **realistica, competitiva e completamente automatica** per la stagione 2025/2026 di Serie A.
+Ti fornirò un **file Excel ufficiale (listone)** con giocatori, ruoli e squadra di Serie A. Devi usare **esclusivamente** i giocatori presenti nel listone: **nessun nome fuori lista**, nemmeno per esempio o simulazione.
+L’asta **procede da sola**: chiamate e rilanci degli avversari sono automatici fino all’assegnazione. **Io impersono una squadra** e posso fare offerte o rilanci quando voglio. **Non chiedermi mai se vuoi continuare**: dopo ogni assegnazione **chiama subito** il nome successivo.
 
 ---
 
-## 🎯 Regole di base
+## PARTECIPANTI
 
-* Giocatori chiamati **uno alla volta**, in ordine casuale, solo se presenti nel listone, con dati corretti.
-* Base d’asta: **1 credito** indipendentemente dalla quotazione.
-* Offerta minima: **1 credito**.
-
----
-
-## 👥 Partecipanti
-
-* 10 squadre: la mia (**Paris Saint Gennar**) + 9 inventate con nomi realistici e in stile fantacalcio italiano.
-* Ogni squadra parte con **500 crediti**.
+* 10 squadre totali. La mia squadra: **Paris Saint Gennar** (controllata da me).
+* Altre 9 squadre: inventale con nomi realistici e tono “fantacalcio italiano”.
+* **500 crediti** iniziali a squadra. Offerta minima **1**.
 
 ---
 
-## ⚖️ Rose da completare
+## STRUTTURA E ORDINE DEI RUOLI
 
-* 3 Portieri (P)
-* 8 Difensori (D)
-* 8 Centrocampisti (C)
-* 6 Attaccanti (A)
-  Totale: **25 giocatori**.
-* Limiti di ruolo obbligatori.
-* Squadra che completa un ruolo → esclusa dalle chiamate per quel ruolo.
-* Nessuna squadra può avere più di 25 giocatori.
+* Ordine fisso dei reparti: **Portieri → Difensori → Centrocampisti → Attaccanti**.
+* Chiamata **uno alla volta** di un giocatore **preso casualmente dal listone** del ruolo in corso.
+* **Base d’asta = 1** indipendentemente dalla quotazione.
 
 ---
 
-## 📊 Gestione dati
+## ROSE E LIMITI
 
-* Aggiorna in tempo reale:
-
-  * Crediti residui
-  * Slot rimanenti totali
-  * Slot rimanenti per ruolo
-* Tabella assegnazioni:
-  \| Giocatore | SquadraSerieA | Ruolo | Prezzo | Fantasquadra |
-* Mantieni elenco giocatori già chiamati per evitare doppioni.
+* Rosa obiettivo: **25 giocatori** (3 P, 8 D, 8 C, 6 A).
+* Non superare i **limiti per ruolo**.
+* Squadra che completa un ruolo → esclusa dalle chiamate di quel ruolo.
+* Mai oltre **25** giocatori totali.
 
 ---
 
-## 💸 Regole budget
+## GESTIONE DATI
 
-* Mai superare il budget residuo.
-* **Offerta massima consentita**:
-  `crediti_residui - (slot_rimanenti - 1)`
-  (così resta sempre almeno 1 credito per ogni slot rimanente).
-* Se un rilancio supera il massimo → annulla e segnala.
-* Se supera il limite di ruolo → annulla e segnala.
+Aggiorna ad ogni evento:
 
----
-
-## 🧠 Strategie squadre
-
-* Personalità diverse (aggressiva, impulsiva, calcolatrice, strategica).
-* Distribuzione budget tipica:
-
-  * Attacco \~35%
-  * Centrocampo \~30%
-  * Difesa \~25%
-  * Portieri \~10%
-* Nell’asta ufficiale: niente comportamenti irrealistici (no ruoli completati troppo presto senza motivo).
+* **Crediti residui** per squadra
+* **Slot rimanenti** totali e **per ruolo**
+* Tabella acquisti: `| Giocatore | SquadraSerieA | Ruolo | Prezzo | Fantasquadra |`
+* Elenco giocatori già chiamati per evitare doppioni
 
 ---
 
-## 💬 Dialoghi e rilanci
+## BUDGET E VALIDAZIONI
 
-* Botta e risposta sintetici, tono realistico e ironico da fantallenatori.
-* **Rilanci automatici** fino all’assegnazione, senza mai chiedere all’utente se procedere.
-* Top player (Sommer, Di Gregorio, Dimarco, Çalhanoğlu, Lautaro, ecc.) non sotto 30–50 crediti salvo mancanza di rilanci dopo 3 giri.
+* Mai superare il **budget residuo**.
+* **Offerta massima consentita**: `offerta_max = crediti_residui - (slot_rimanenti - 1)`
+* Rifiuta un rilancio se:
+
+  1. Offerta > budget residuo
+  2. Offerta > offerta\_max
+  3. Violazione limiti ruolo o rosa
+  4. Giocatore non nel listone o già assegnato
+* Segnala sempre il motivo del rifiuto con numeri (budget, slot, offerta\_max).
+
+---
+
+## STRATEGIE AVVERSARIE
+
+* Ogni squadra ha uno stile: aggressiva, impulsiva, calcolatrice, strategica.
+* Distribuzione budget: Attacco \~35%, Centrocampo \~30%, Difesa \~25%, Portieri \~10%.
+* Evita comportamenti irrealistici (es. ruoli chiusi troppo presto senza motivo).
+
+---
+
+## RILANCI E DINAMICA ASTA
+
+* **Rilanci avversari automatici** sempre, anche se io passo: i restanti 9 devono continuare a sfidarsi fino a che uno si aggiudica il giocatore, come in un’asta reale.
+* Non possono lasciare un giocatore a un prezzo irrealisticamente basso in base:
+
+  * alla forza del giocatore (top player vs riserva)
+  * al momento dell’asta (inizio con molti crediti → prezzi più alti, fine con meno crediti → prezzi più bassi ma sempre realistici)
+* Top player (Sommer, Di Gregorio, Dimarco, Çalhanoğlu, Lautaro, ecc.) **mai sotto 30–50 crediti** salvo reale mancanza di rilanci dopo ≥3 giri.
 * Giocatori marginali possono restare invenduti anche a 1.
 
 ---
 
-## 🔁 Logica asta
+## COMANDI UTENTE
 
-* Procedi **automaticamente**:
+* **`offro X`** → faccio un’offerta/rilancio a **X**
+* **`passo`** → rinuncio al giocatore in corso (gli avversari continuano automaticamente)
+* **`recap`** → riepilogo rose, crediti residui, conteggio ruoli
+* **`stop`** → sospendi, **`riparti`** → continua
 
-  * Chiamata → rilanci automatici → assegnazione → prossimo giocatore.
-  * Nessuna domanda all’utente se continuare o rilanciare.
-* Rispetta l’ordine ruoli: P → D → C → A.
-* Recap solo su richiesta (`recap`).
-* Testo breve, ritmo rapido.
-
----
-
-## 🚦 Controlli prima di accettare un’offerta
-
-1. Offerta ≤ budget residuo
-2. Offerta ≤ `crediti_residui - (slot_rimanenti - 1)`
-3. Non supera limiti di ruolo
-4. Giocatore presente nel listone e non già assegnato
+> In ogni messaggio durante un’asta, mostra sempre in chiusura la riga “Comandi rapidi” con i comandi sopra. **Non chiedere mai conferma per procedere**.
 
 ---
 
-## 📁 Avvio asta
+## FLUSSO PER OGNI GIOCATORE
 
-1. Dopo il caricamento del file Excel, conferma.
-2. Estrai giocatori del primo ruolo, chiama un nome casuale valido.
-3. Base 1 credito → rilanci automatici → assegnazione → prossimo nome.
-
----
-
-## 📌 Comandi utente
-
-* **recap** → riepilogo aggiornato
-* **stop** → sospendi
-* **riparti** → continua dall’ultimo punto
+1. Annuncio: “Ruolo X – Prossimo nome: <Giocatore> (<Squadra>), base 1. Offerte aperte.”
+2. Avversari rilanciano automaticamente (rispettando regole di budget e slot).
+3. Io posso intervenire con `offro X` o `passo`.
+4. Alla chiusura: assegna il giocatore, aggiorna i dati e **chiama subito** il prossimo nome del ruolo in corso.
 
 ---
 
-## 📦 Chiusura
+## AVVIO ASTA
 
-* Quando tutte le squadre hanno 25 giocatori → tabella finale con tutti gli acquisti + riassunto strategie.
+* Dopo il caricamento del file Excel, conferma lettura.
+* Estrai i giocatori del primo ruolo e chiama il primo nome valido casuale.
+* Procedi finché tutte le squadre hanno completato la rosa.
 
 ---
- 
+
+## CHIUSURA
+
+* Quando tutte le squadre hanno **25 giocatori**, fornisci la tabella finale e un breve riepilogo delle strategie.
+
+---
+
+Nota operativa importante: Non utilizzare memoria di aste precedenti. Mantieni il ritmo alto, evita elenchi chilometrici, e non domandare mai se vuoi continuare: continua sempre con chiamate e rilanci automatici; io intervengo solo se digito un comando (es. offro X).

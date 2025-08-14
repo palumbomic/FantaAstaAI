@@ -26,6 +26,4 @@ Questo repo contiene:
 - Ruoli battuti in ordine: **P → D → C → A**.
 - Alcuni giocatori top non vanno via sottocosto: logiche di prezzo min. realistiche sono incluse.
 
----
 
-Made for Michele Palumbo.

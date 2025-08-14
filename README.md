@@ -1,6 +1,6 @@
 # FantaAstaAI
 
-Repository per gestire (con AI) un'**asta di fantacalcio Serie A 2025/2026** realistica, competitiva e *budget-safe*, usando un prompt ottimizzato e il **listone ufficiale**.
+Promp per gestire (con AI) un'**asta di fantacalcio Serie A 2025/2026** realistica, competitiva e *budget-safe*, usando un prompt ottimizzato e il **listone ufficiale**.
 
 ## ✨ Descrizione
 Questo repo contiene:

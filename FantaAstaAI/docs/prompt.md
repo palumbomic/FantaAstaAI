@@ -1,7 +1,3 @@
-# Prompt Asta Fantacalcio Serie A 2025/2026 
-
-## Incipit  
-
 Voglio che tu gestisca un’asta di fantacalcio realistica, competitiva e completamente automatica per la stagione 2025/2026 della Serie A.
 Ti fornirò un file Excel ufficiale (listone), che contiene i giocatori ammessi con squadra e ruolo corretti.
 Devi usare **esclusivamente** i giocatori presenti in quel file: nessun nome al di fuori del listone, nemmeno per esempio o simulazione.

@@ -5,8 +5,7 @@ Prompt per gestire (con AI) un'**asta di fantacalcio Serie A 2025/2026** realist
 ## ✨ Descrizione
 Questo repo contiene:
 - `docs/prompt.md` → prompt migliorato per ChatGPT per condurre l'asta in modo credibile e fluido.
-- `data/Listone_Ufficiale_2025_26.xlsx` → il listone ufficiale da usare come **unica** fonte dei giocatori.
-- `README.md` → istruzioni d'uso e regole di budget.
+- `data/Listone_Ufficiale_2025_26.xlsx` → il listone ufficiale da usare come **unica** fonte dei giocatori (Listone aggiornato in data 14/08/2025).
 
 ## 📦 Come usarlo con ChatGPT
 1. Apri `docs/prompt.md` e copia tutto.

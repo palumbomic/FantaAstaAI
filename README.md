@@ -4,14 +4,15 @@ Prompt per gestire (con AI) un'**asta di Fantacalcio Serie A 2025/2026** realist
 
 ## ✨ Descrizione
 Questo repo contiene:
-- `docs/prompt.md` → prompt migliorato per ChatGPT per condurre l'asta in modo credibile e fluido.
-- `data/Listone_Ufficiale_2025_26.xlsx` → il listone ufficiale da usare come **unica** fonte dei giocatori (Listone aggiornato in data 14/08/2025).
+- `prompt.md` → prompt migliorato per ChatGPT per condurre l'asta in modo credibile e fluido.
+- Per scaricare il listone ufficiale da usare come **unica** fonte dei giocatori collegarsi qui: https://www.fantacalcio.it/quotazioni-fantacalcio .
 
 ## 📦 Come usarlo con ChatGPT
 1. Apri `docs/prompt.md` e copia tutto.
-2. Carica su ChatGPT **il file Excel** in `data/`.
-3. Incolla il prompt e inizia l'asta: il bot chiamerà **un giocatore per volta**, partendo dai portieri.
-4. Durante l'asta puoi scrivere `recap` per avere il riepilogo aggiornato.
+2. carica qui il listone ufficiale con tutti i giocatori della Serie A: https://www.fantacalcio.it/quotazioni-fantacalcio
+3. Carica su ChatGPT **il file Excel**.
+4. Incolla il prompt e inizia l'asta: il bot chiamerà **un giocatore per volta**, partendo dai portieri.
+5. Durante l'asta puoi scrivere `recap` per avere il riepilogo aggiornato.
 
 ## 💸 Regole di Budget (rinforzate nel prompt)
 - Ogni squadra parte con **500 crediti**.
